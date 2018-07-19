@@ -1,0 +1,11 @@
+---
+- name: Downloading the package
+  get_url:
+    url: "https://s3-eu-west-1.amazonaws.com/devops-assesment/airports-assembly-1.1.0.jar"
+    dest: /app/airports-assembly-1.1.0.jar
+    mode: 0775
+
+- name: Running the service
+  shell: nohup java -jar /app/airports-assembly-1.1.0.jar </dev/null >/dev/null 2>&1 &
+  async: 2592000
+  pool: 0

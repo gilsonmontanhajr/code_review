@@ -1,0 +1,21 @@
+---
+- name: Deploying applications country-service
+  hosts: country-service
+  remote_user: root
+
+  roles:
+  - country-service
+
+- name: Deploying application airport-service-v101
+  hosts: airport-service-v101
+  remote_user: root
+
+  roles:
+  - airport-service-v101
+
+- name: Deploying application airport-service-v110
+  hosts: airport-service-v101
+  remote_user: root
+
+  roles:
+  - airport-service-v110
